@@ -1,6 +1,6 @@
 package org.example.models;
 
-public class Order {
+public abstract class Order {
 
     protected Customer customer;
     protected double price;
@@ -38,5 +38,6 @@ public class Order {
 
         this.customer = customer;
     }
+    public abstract String getOrderType();
 
 }
