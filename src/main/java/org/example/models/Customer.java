@@ -1,6 +1,6 @@
 package org.example.models;
 
-public class Customer {
+public class Customer implements Comparable<Customer>{
     private String name;
     private String surname;
     private String phone;
@@ -47,6 +47,21 @@ public class Customer {
     }
     public void printSummary(){
         System.out.println("Customer" + name + surname + phone + address);
+    }
+
+    @Override
+    public int compareTo(Customer other) {
+        // Define natural ordering (e.g., by surname then name)
+        int result = this.surname.compareTo(other.surname);
+        if (result == 0) {
+            result = this.name.compareTo(other.name);
+        }
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return surname + ", " + name;
     }
 
 }

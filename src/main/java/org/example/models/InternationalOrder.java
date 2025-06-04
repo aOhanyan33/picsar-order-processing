@@ -1,5 +1,7 @@
 package org.example.models;
 
+import org.example.exceptions.DeliveryException;
+
 public class InternationalOrder extends Order implements Deliverable{
     public InternationalOrder (Customer customer, double price){
         super(customer, price);
@@ -21,5 +23,14 @@ public class InternationalOrder extends Order implements Deliverable{
     @Override
     public String getOrderType() {
         return "International Order";
+    }
+
+    //checking country
+    public boolean isCountryGeorgia() {
+        if (customer.getAddress().getCountry().equals("Georgia")) {
+            throw new DeliveryException("We don't deliver to Georgia");
+        } else {
+            return false;
+        }
     }
 }
