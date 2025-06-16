@@ -4,9 +4,9 @@ public class Customer {
     private String name;
     private String surname;
     private String phone;
-    private  String address;
+    private  Address address;
 
-    public Customer (String name, String surname, String phone, String address) {
+    public Customer (String name, String surname, String phone, Address address) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -22,7 +22,8 @@ public class Customer {
     public String getPhone() {
         return phone;
     }
-    public String getAddress() {
+    public Address getAddress() {
+
         return address;
     }
 
@@ -36,7 +37,7 @@ public class Customer {
         this.phone = phone;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
